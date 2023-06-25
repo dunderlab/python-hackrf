@@ -1,4 +1,4 @@
-# pyhackrf
+# pyhackrf2
 
 A Python wrappper for libhackrf rewritten.
 
@@ -13,7 +13,7 @@ Supports receive, transmit, sweep, setting all gains, baseband filter and bias t
 To take samples and plot the power spectral density:
 
 ```python
-from libhackrf import HackRF
+from pyhackrf2 import HackRF
 from pylab import *     # for plotting
 
 hackrf = HackRF()
@@ -34,7 +34,7 @@ show()
 
 First, import class from module
 ```python
-from libhackrf import HackRF
+from pyhackrf2 import HackRF
 ```
 
 

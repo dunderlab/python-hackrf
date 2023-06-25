@@ -1,4 +1,4 @@
-from libhackrf import HackRF
+from pyhackrf2 import HackRF
 from time import sleep
 import numpy as np
 import math
