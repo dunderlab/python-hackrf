@@ -1,6 +1,6 @@
 # pyhackrf
 
-A Python wrappper for libhackrf
+A Python wrappper for libhackrf rewritten.
 
 # Description
 
