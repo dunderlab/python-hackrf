@@ -14,7 +14,8 @@ To take samples and plot the power spectral density:
 
 ```python
 from pyhackrf2 import HackRF
-from pylab import *     # for plotting
+# needed to plot
+from matplotlib.pylab import psd
 
 hackrf = HackRF()
 
@@ -23,11 +24,7 @@ hackrf.center_freq = 88.5e6
 
 samples = hackrf.read_samples(2e6)
 
-# use matplotlib to estimate and plot the PSD
 psd(samples, NFFT=1024, Fs=hackrf.sample_rate/1e6, Fc=hackrf.center_freq/1e6)
-xlabel('Frequency (MHz)')
-ylabel('Relative power (dB)')
-show()
 ```
 
 # More Example Use
