@@ -1,7 +1,7 @@
 from ctypes import *
 import numpy as np
 from collections.abc import Callable
-from cinterface import (
+from .cinterface import (
     libhackrf,
     p_hackrf_device,
     TransceiverMode,
@@ -185,6 +185,7 @@ class HackRF(object):
 
         while self._transceiver_mode != TransceiverMode.HACKRF_TRANSCEIVER_MODE_OFF:
             pass
+        self.stop_rx()
         # convert samples to iq
         values = np.array(self.buffer).astype(np.int8)
         iq = values.astype(np.float64).view(np.complex128)

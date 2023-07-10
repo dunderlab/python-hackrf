@@ -165,5 +165,16 @@ hackrf.txvga_gain = 40
 
 ```
 
+### Mac M1 users
 
+At the moment, libhackrf is not avalable with arm architecture. If you get message like, the following:
+```
+OSError: dlopen(libhackrf.so.0, 0x0006): ... '/usr/local/lib/libhackrf.so.0' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64')), ...
+```
 
+You need to install using
+```
+arch -x86_64 python -m venv venv
+arch -x86_64 pip install pyhackrf2
+```
+This will fetch x86_64 version of numpy, and will be compatible with libhackrf.so.0 as x86_64 binary.
