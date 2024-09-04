@@ -1,0 +1,8 @@
+recursive-include hackrf/ *
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude docs/ *
+recursive-exclude test/ *
+recursive-exclude notebooks/ *
+
