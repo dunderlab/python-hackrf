@@ -121,7 +121,7 @@ await scanhackrf.scan(
 )
 
 # %% [markdown]
-# # Preview Sweep Frecuency Influence 
+# # Preview Sweep Frequency Influence 
 
 # %%
 from hackrf.utils import preview_scan
