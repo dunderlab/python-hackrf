@@ -16,6 +16,7 @@ ScanHackRF
 from hackrf.core import HackRF
 import asyncio
 import logging
+from typing import Callable
 
 
 ########################################################################
@@ -49,7 +50,7 @@ class ScanHackRF(HackRF):
         step_offset: float = None,
         read_num_blocks: int = 1,
         buffer_num_blocks: int = 1,
-        callback: callable[[dict], None] = None,
+        callback: Callable[[dict], None] = None,
         interleaved: bool = False,
     ) -> None:
         r"""
