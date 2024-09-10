@@ -23,8 +23,3 @@ This package implements sweep scanning effectively, allowing users to specify fr
 Users can define custom callback functions to process the scanned data, providing flexibility for different applications, whether for educational purposes, signal detection, or research.
 
 ![Sweep Scanning](https://raw.githubusercontent.com/dunderlab/python-libhackrf/master/docs/source/notebooks/_images/sweep.png "Sweep Scanning")
-
-
-```python
-
-```
