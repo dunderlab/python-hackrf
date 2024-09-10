@@ -38,9 +38,9 @@ html_theme_options = {
     'sidebar_width': '300px',
 }
 
-dunderlab_color_links = '#4EAE8B'
+dunderlab_color_links = '#FFB678'
 dunderlab_code_reference = True
-dunderlab_github_repository = "https://github.com/dunderlab/python-hackrf"
+dunderlab_github_repository = "https://github.com/dunderlab/python-libhackrf"
 
 
 # -- Include documentation from docstrings -----------------------------------
