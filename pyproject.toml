@@ -3,9 +3,9 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "hackrf"
-version = "0.1a1"
-description = "Python hackrf"
+name = "libhackrf"
+version = "0.1a2"
+description = "A Python library for interfacing with HackRF software-defined radio hardware, enabling signal reception and transmission, frequency scanning, and data processing."
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "BSD-2-Clause" }
@@ -36,7 +36,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-"Repository" = "https://github.com/dunderlab/python-hackrf"
+"Repository" = "https://github.com/dunderlab/python-libhackrf"
 
 [tool.setuptools.packages.find]
 where = ["."]
