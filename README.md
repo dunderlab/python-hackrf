@@ -23,3 +23,9 @@ This package implements sweep scanning effectively, allowing users to specify fr
 Users can define custom callback functions to process the scanned data, providing flexibility for different applications, whether for educational purposes, signal detection, or research.
 
 ![Sweep Scanning](https://raw.githubusercontent.com/dunderlab/python-libhackrf/master/docs/source/notebooks/_images/sweep.png "Sweep Scanning")
+
+For example, to configure FM scanning, you can use the following setup:
+
+![Sweep Scanning](https://raw.githubusercontent.com/dunderlab/python-libhackrf/master/docs/source/notebooks/_images/sweepFM.png "Sweep Scanning")
+
+This configuration allows you to scan the FM broadcast band from 88 MHz to 108 MHz, with a sample rate of 8 MHz, stepping 2 MHz at a time. The `step_offset` can be adjusted as needed for specific scenarios.

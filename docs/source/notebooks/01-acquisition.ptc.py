@@ -19,14 +19,14 @@ sys.path.append('../../../')
 sys.path.append('/usr/local/lib/wingpro10')
 import wingdbstub
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 from hackrf import ScanHackRF
 import numpy as np
 from matplotlib import pyplot as plt
 from scipy.signal import welch
 from IPython.display import display, clear_output
 
-# %% [markdown]
+# %% [markdown] editable=true slideshow={"slide_type": ""}
 # # Scanning
 #
 # Scanning refers to the process of systematically checking a range of frequencies to detect signals.
@@ -46,7 +46,7 @@ def custom_callback(data_freqs, sweep_config):
         history.pop(0)
 
     clear_output(wait=True)
-    plt.figure(figsize=(20, 7), dpi=90)
+    plt.figure(figsize=(16, 7), dpi=90)
 
     for i, f in enumerate(data_freqs):
 
@@ -73,6 +73,11 @@ def custom_callback(data_freqs, sweep_config):
                 color='w',
                 zorder=100 - j,
             )
+
+        plt.xlabel("Frequency (MHz)")
+        plt.ylabel("Power Spectral Density (V²/Hz)")
+        plt.gca().spines['top'].set_visible(False)
+        plt.gca().spines['right'].set_visible(False)
 
     plt.ylim(-1e-9, 15e-9)
     plt.show()
@@ -123,10 +128,10 @@ await scanhackrf.scan(
 # %% [markdown]
 # # Preview Sweep Frequency Influence 
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 from hackrf.utils import preview_scan
 
-# %%
+# %% editable=true slideshow={"slide_type": ""}
 preview_scan(
     bands=[
         (88, 108),
@@ -136,9 +141,12 @@ preview_scan(
     sample_rate=20e6,
     step_width=20e6,
     step_offset=None,
-)
 
-# %%
+    top=0.4,
+    save='_images/sweep.png'
+);
+
+# %% editable=true slideshow={"slide_type": ""}
 preview_scan(
     bands=[
         (88, 108),
@@ -147,4 +155,19 @@ preview_scan(
     sample_rate=20e6,
     step_width=20e6,
     step_offset=0,
-)
+
+    top=0.15,
+);
+
+# %% editable=true slideshow={"slide_type": ""}
+preview_scan(
+    bands=[
+        (88, 108),
+    ],
+    sample_rate=8e6,
+    step_width=2e6,
+    step_offset=None,
+
+    top=0.7,
+    save = '_images/sweepFM.png'
+);

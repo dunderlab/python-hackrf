@@ -41,3 +41,13 @@ educational purposes, signal detection, or research.
 
    Sweep Scanning
 
+For example, to configure FM scanning, you can use the following setup:
+
+.. figure:: _images/sweepFM.png
+   :alt: Sweep Scanning
+
+   Sweep Scanning
+
+This configuration allows you to scan the FM broadcast band from 88 MHz
+to 108 MHz, with a sample rate of 8 MHz, stepping 2 MHz at a time. The
+``step_offset`` can be adjusted as needed for specific scenarios.

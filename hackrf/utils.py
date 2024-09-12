@@ -10,11 +10,13 @@ def preview_scan(
     # buffer_num_blocks: int = 1,
     # callback: Callable[[dict], None] = None,
     # interleaved: bool = False,
+    top=0.5,
+    save=None,
     *args,
     **kwargs,
 ) -> None:
 
-    plt.figure(figsize=(16, 5), dpi=90)
+    plt.figure(figsize=(16, 7), dpi=90)
 
     level = 0
     level_i = 0.05
@@ -29,16 +31,20 @@ def preview_scan(
         scan = start - step_offset
 
         plt.fill_between(
-            [scan, end], [-0.05, -0.05], [0.5, 0.5], color=f'C{i}', alpha=0.1
+            [start, end],
+            [-0.05, -0.05],
+            [top, top],
+            color=f'C{i}',
+            alpha=0.1,
         )
 
         plt.vlines(
-            scan, -0.05, 0.5, color=f'C{i}', linestyle='--', alpha=0.3
+            start, -0.05, top, color=f'C{i}', linestyle='--', alpha=0.3
         )
 
-        plt.vlines(end, -0.05, 0.5, color=f'C{i}', linestyle='--', alpha=0.3)
+        plt.vlines(end, -0.05, top, color=f'C{i}', linestyle='--', alpha=0.3)
 
-        plt.text(scan, -0.1, f'{scan/1e6:.0f} MHz', ha='center')
+        plt.text(start, -0.1, f'{start/1e6:.0f} MHz', ha='center')
         plt.text(end, -0.1, f'{end/1e6:.0f} MHz', ha='center')
 
         while scan < end:
@@ -64,3 +70,8 @@ def preview_scan(
         level = 0
 
     plt.axis('off')
+
+    if save:
+        plt.savefig(save)
+
+    return plt.gca()
