@@ -106,3 +106,7 @@ autodoc_mock_imports = [
     # Uncomment the modules you need to mock
     "numpy",
 ]
+
+
+def setup(app):
+    app.add_css_file('custom.css')

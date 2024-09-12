@@ -19,13 +19,6 @@ sys.path.append('../../../')
 sys.path.append('/usr/local/lib/wingpro10')
 import wingdbstub
 
-# %% editable=true slideshow={"slide_type": ""}
-from hackrf import ScanHackRF
-import numpy as np
-from matplotlib import pyplot as plt
-from scipy.signal import welch
-from IPython.display import display, clear_output
-
 # %% [markdown] editable=true slideshow={"slide_type": ""}
 # # Scanning
 #
@@ -34,6 +27,13 @@ from IPython.display import display, clear_output
 # In this context, the scanning is performed using the HackRF device, which samples frequencies over a
 # defined bandwidth. The scanning operation collects frequency data, which can then be processed
 # and visualized to understand the signal characteristics in the specified bands.
+
+# %% editable=true slideshow={"slide_type": ""}
+from hackrf import ScanHackRF
+import numpy as np
+from matplotlib import pyplot as plt
+from scipy.signal import welch
+from IPython.display import display, clear_output
 
 # %%
 history = []

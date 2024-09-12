@@ -1,0 +1,3 @@
+div.nbinput.container div.input_area, div.nboutput.container div.output_area {
+    overflow: unset;
+}
