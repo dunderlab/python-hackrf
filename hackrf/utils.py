@@ -1,4 +1,6 @@
 from matplotlib import pyplot as plt
+import subprocess
+import os
 
 
 def preview_scan(
@@ -75,3 +77,12 @@ def preview_scan(
         plt.savefig(save)
 
     return plt.gca()
+
+
+# ----------------------------------------------------------------------
+def load_lib():
+    """"""
+    os.environ['LD_LIBRARY_PATH'] = '/usr/local/lib:' + os.environ.get(
+        'LD_LIBRARY_PATH', ''
+    )
+    subprocess.run(['ldconfig'], check=True)
