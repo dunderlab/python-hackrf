@@ -665,7 +665,6 @@ class HackRF(object):
 
         BLOCKS_PER_TRANSFER = 16
         block_size = len(data) // BLOCKS_PER_TRANSFER
-        self._buffer_freqs = {}
 
         for block_index in range(BLOCKS_PER_TRANSFER):
 
@@ -783,6 +782,7 @@ class HackRF(object):
         self._sweep_pipe_function = pipe_function
         self._sample_count = 0
         # self._freqs_count = len(band_freqs)
+        self._buffer_freqs = {}
         self._buffer_size = buffer_size
         self._buffer_freqs = {}
         self._sweep_config = {
