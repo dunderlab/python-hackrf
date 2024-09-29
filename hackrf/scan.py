@@ -14,7 +14,6 @@ ScanHackRF
 """
 
 from hackrf.core import HackRF
-import asyncio
 import logging
 from typing import Callable
 
@@ -39,10 +38,10 @@ class ScanHackRF(HackRF):
             Keyword arguments to pass to the superclass initialization.
         """
         super().__init__(*args, **kwargs)
-        self.scan_event = asyncio.Event()
+        # self.scan_event = asyncio.Event()
 
     # ----------------------------------------------------------------------
-    async def scan(
+    def scan(
         self,
         bands: list[float],
         sample_rate: float = 20e6,
@@ -100,7 +99,6 @@ class ScanHackRF(HackRF):
             interleaved=interleaved,
             buffer_size=block_size * buffer_num_blocks,
         )
-        await self.scan_event.wait()
 
     # ----------------------------------------------------------------------
     def _callback(
@@ -133,4 +131,4 @@ class ScanHackRF(HackRF):
             logging.debug(
                 f"The queue for {int(freq / 1e6)} MHz contains {len(data)} values."
             )
-        return self.scan_event.is_set()
+        # return self.scan_event.is_set()
