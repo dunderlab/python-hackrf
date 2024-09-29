@@ -110,7 +110,7 @@ def custom_callback(data_freqs, sweep_config):
 
 # %%
 scanhackrf = ScanHackRF(0)
-await scanhackrf.scan(
+scanhackrf.scan(
     bands=[
         # List of frequency tuples (start_freq, end_freq) in MHz
         (88, 108),

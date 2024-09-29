@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "libhackrf"
-version = "0.1a2"
+version = "0.2"
 description = "A Python library for interfacing with HackRF software-defined radio hardware, enabling signal reception and transmission, frequency scanning, and data processing."
 readme = "README.md"
 requires-python = ">=3.8"
